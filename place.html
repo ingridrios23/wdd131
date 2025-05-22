@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peru Info</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/scripts.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Peru</h1>
+  </header>
+
+  <main>
+    <div class="background" style="position: relative; padding: 40px; display: flex; justify-content: space-between; gap: 20px; align-items: center; min-height: 80vh;">
+      
+      <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+        <source 
+          srcset="
+            images/peru_background-400.webp , 
+            images/peru_background-800.webp 
+          " 
+          sizes="(max-width: 600px) 400px, 800px" 
+          type="image/webp" />
+        <img 
+          src="images/peru_background-800.webp" 
+          alt="Peru background" 
+          style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      </picture>
+
+      <div class="card data">
+        <h2>Data</h2>
+        <ul>
+          <li><strong>Area:</strong> 1,285,216 sq km</li>
+          <li><strong>Population:</strong> 33,396,000</li>
+          <li><strong>Capital:</strong> Lima</li>
+          <li><strong>Languages:</strong> Spanish, Quechua, Aymara</li>
+          <li><strong>Currency:</strong> Peruvian Sol (PEN)</li>
+          <li><strong>Time Zone:</strong> UTC−5</li>
+          <li><strong>Calling Code:</strong> +51</li>
+          <li><strong>Internet TLD:</strong> .pe</li>
+        </ul>
+      </div>
+
+      <div class="card weather">
+        <h2>
+          Weather 🌤️
+          <svg class="weather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="orange" viewBox="0 0 24 24" aria-label="Weather icon" role="img" style="display:none;">
+            <path d="M6.995 12c0-2.761 2.246-5 5.005-5a5.004 5.004 0 0 1 4.9 4H17a3 3 0 1 1 0 6H7a4 4 0 0 1 0-8z"/>
+          </svg>
+        </h2>
+
+        <ul>
+          <li><strong>Temperature:</strong> <span id="temperature">18</span> °C</li>
+          <li><strong>Conditions:</strong> Mostly Sunny</li>
+          <li><strong>Wind:</strong> <span id="windSpeed">10</span> km/h</li>
+          <li><strong>Wind Chill:</strong> <span id="windChill">Calculating...</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> 🌸 Ingrid Rios 🌸 Peru</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>

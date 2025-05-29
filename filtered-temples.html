@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temples - Filter</title>
+  <link rel="stylesheet" href="styles/filtered-temples.css" />
+</head>
+<body>
+  <header>
+    <h1 id="temples-title">Temples</h1>
+    <nav role="navigation" aria-label="Temple filters">
+  <button onclick="filterTemples('home')" aria-pressed="true">Home</button>
+  <button onclick="filterTemples('old')" aria-pressed="false">Old</button>
+  <button onclick="filterTemples('new')" aria-pressed="false">New</button>
+  <button onclick="filterTemples('large')" aria-pressed="false">Large</button>
+  <button onclick="filterTemples('small')" aria-pressed="false">Small</button>
+</nav>
+
+  </header>
+
+  <main>
+    <div id="temple-cards" class="temple-grid"></div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> | Last modified: <span id="lastModified"></span> | Ingrid Rios </p>
+  </footer>
+
+<script src="scripts/filtered-temples.js" defer></script>
+
+</body>
+</html>

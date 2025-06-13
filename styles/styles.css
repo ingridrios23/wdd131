@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #b00e1a;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 2em;
+}
+
+.background {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.background picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  width: 300px;
+  max-width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  background-color: #2e7d32;
+  color: white;
+  padding: 10px;
+  margin: -20px -20px 10px -20px;
+  font-size: 1.2em;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
+
+footer {
+  background-color: #b00e1a;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+}
+
+
+.weather-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .weather-icon {
+    display: inline-block; 
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  .background {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+

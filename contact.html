@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Adopt a Friend</title>
+  <link rel="stylesheet" href="styles/styles1.css" />
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="gallery.html">Pets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-form">
+      <h2>We’d love to hear from you</h2>
+      <form id="fullContactForm" action="#" method="post" novalidate>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" required minlength="2" />
+
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required minlength="10"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="contactResponse" role="alert" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Adopt a Friend</p>
+    <p><a href="references.html">References</a></p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('fullContactForm');
+    const response = document.getElementById('contactResponse');
+
+    
+    const submissions = [];
+
+    
+    function Submission(name, email, message) {
+      this.name = name;
+      this.email = email;
+      this.message = message;
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      
+      const newSubmission = new Submission(
+        form.name.value.trim(),
+        form.email.value.trim(),
+        form.message.value.trim()
+      );
+
+      if (
+        newSubmission.name.length >= 2 &&
+        newSubmission.email.includes('@') &&
+        newSubmission.message.length >= 10
+      ) {
+        
+        submissions.push(newSubmission);
+
+        response.textContent = `Thank you, ${newSubmission.name}. We'll get back to you shortly.`;
+
+        
+        form.reset();
+
+        
+        console.log('Submissions:', submissions);
+      } else {
+        response.textContent = 'Please fill out the form correctly before submitting.';
+      }
+    });
+  </script>
+</body>
+</html>

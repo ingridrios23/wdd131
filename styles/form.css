@@ -1,0 +1,113 @@
+/* Base Styles */
+:root {
+  --primary-color: #005f73;
+  --secondary-color: #94d2bd;
+  --text-color: #333;
+  --bg-color: #fdfdfd;
+  --border-radius: 8px;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+header, footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Form Styles */
+form label,
+form legend {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+fieldset {
+  border: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0a9396;
+}
+
+/* Star rating layout */
+fieldset legend {
+  margin-bottom: 0.5rem;
+}
+
+fieldset label {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  fieldset label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}

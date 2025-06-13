@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet Gallery - Adopt a Friend</title>
+  <link rel="stylesheet" href="styles/styles1.css" />
+</head>
+<body>
+  <header>
+    <h1>Pet Gallery</h1>
+    <nav>
+      <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="gallery.html">Pets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gallery">
+      <h2>Meet Our Adorable Pets</h2>
+      <div class="gallery-grid">
+        <img data-src="images/luna.jpg" alt="Luna the cat" loading="lazy" />
+        <img data-src="images/toby.jpg" alt="Toby the dog" loading="lazy" />
+        <img data-src="images/nala.jpg" alt="Nala the rabbit" loading="lazy" />
+        <img data-src="images/rocky.jpg" alt="Rocky the dog" loading="lazy" />
+        <img data-src="images/mia.jpg" alt="Mia the cat" loading="lazy" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Adopt a Friend</p>
+    <p><a href="references.html">References</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      observer.observe(img);
+    });
+  </script>
+</body>
+</html>
